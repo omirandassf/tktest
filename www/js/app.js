@@ -5,9 +5,6 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'TKTestAnswers', 'chart.js', 'TKResultsButton'])
 
-
-
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -27,30 +24,28 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
-  $stateProvider
-    .state('lobby', {
-      url: '/',
-      templateUrl: 'templates/lobby.html',
-      controller:'LobbyCtrl'
-    })
-    .state('question', {
-      url: '/question:questionID',
-      templateUrl: 'templates/question.html',
-      controller: 'QuestionsCtrl',
-      resolve: {
-        testInfo: function($stateParams, TKTestQuestionService) {
-          return TKTestQuestionService.getQuestion($stateParams.questionID);
-        }
+$urlRouterProvider.otherwise('/');
+$stateProvider
+  .state('lobby', {
+    url: '/',
+    controller: 'LobbyCtrl',
+    templateUrl: 'templates/lobby.html',
+  })
+  .state('question', {
+    url: '/question:questionID',
+    templateUrl: 'templates/question.html',
+    controller: 'QuestionsCtrl',
+    resolve: {
+      testInfo: function($stateParams, TKTestQuestionService) {
+        return TKTestQuestionService.getQuestion($stateParams.questionID);
       }
-
-    })
-    .state('results', {
-      url: '/results',
-      templateURL: 'templates/results.html',
-      controller: 'ResultsCtrl'
-    })
-
+    }
+  })
+  .state('results', {
+    url: '/results',
+    templateUrl: 'templates/results.html',
+    controller: 'ResultsCtrl',
+  })
   .state('history', {
     url: '/history',
     templateUrl: 'templates/history.html',
