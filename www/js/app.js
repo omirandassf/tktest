@@ -45,6 +45,7 @@ $stateProvider
     url: '/results',
     templateUrl: 'templates/results.html',
     controller: 'ResultsCtrl',
+    cache:'false',
   })
   .state('history', {
     url: '/history',

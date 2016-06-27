@@ -37,15 +37,12 @@ function performRequest()
     var date = new Date();
     answersDict["createDate"] = date.toUTCString();
     TKAnswersService.saveTest(answersDict);
-    $ionicHistory.nextViewOptions({
-         historyRoot: true
-    });
-    $state.go('results');
     TKResultsButtonService.setShouldShowMenuButton(true);
     $ionicHistory.nextViewOptions({
-         historyRoot: true
+        historyRoot: true
     });
-    $state.go('lobby');
+  
+    $state.go('results');
 }
 
 }]);
