@@ -11,7 +11,17 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="lib/angular-chart.js/dist/angular-chart.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
 
+    <!-- stylesheets and script files for Ionic Material-->
+    
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     <link href="lib/angular-chart.js/dist/angular-chart.css" rel="stylesheet">
@@ -24,6 +34,8 @@
 <!-- scripts from Chart and Angular Chart-->
     <script src="lib/Chart.js/Chart.js"></script>
     <script src="lib/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
 
 
 
@@ -32,14 +44,21 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <!--Controllers-->
     <script src="js/controllers/starterControllers.js"></script>
     <script src="js/controllers/LobbyCtrl.js"></script>
     <script src="js/controllers/questionsCtrl.js"></script>
     <script src="js/controllers/resultsCtrl.js"></script>
     <script src="js/controllers/historyCtrl.js"></script>
+    <script src="js/controllers/RegisterCtrl.js"></script>
+
+    <!--Services-->
     <script src="js/services/answersService.js"></script>
     <script src="js/services/questionsService.js"></script>
     <script src="js/services/resultsButtonService.js"></script>
+    <script src="js/RESTServices/SSFUsersRest.js"></script>
+    <script src="js/RESTServices/QuestionsRest.js"></script>
+    <script src="js/RESTServices/TestResultsRest.js"></script>
 
     
 
