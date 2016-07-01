@@ -45,8 +45,8 @@ angular.module('TKTestAnswers', [])
         service.saveTest = function(test) {
             // var tempTests = $window.localStorage.tests === undefined ? [] : JSON.parse($window.localStorage.tests);
             // tempTests.push(test);
-            // $window.localStorage.tests = JSON.stringify(tempTests);
-            test.userID = "577300eaabdf075148efd13b";
+            //$window.localStorage.tests = JSON.stringify(tempTests);
+            test.userID=$window.localStorage.userId;
             TestResultsRest.save(test);
         };
 

@@ -56,8 +56,12 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
       resolve: {
         tests: ['TKAnswersService','$window', 
         function(TKAnswersService, $window) {
-          return TKAnswersService.getTests($window.localStorage.token,$window.localStorage.userId).then(function(res) {
+          return TKAnswersService.getTests($window.localStorage.token,$window.localStorage.userId)
+          .then(function(res) {
           return res.data;
+          
+            
+            
           }, function(err) {
           
             if (err.status == 404) {

@@ -11,8 +11,9 @@ angular.module('starter.controllers')
                 SSFUsersRest.post($scope.user).then(function(response) {
                     // handle different responses and decide what happens next
                     if (response.status == 200) {
-                        $window.localStorage.userId=response.data.id;
                         $window.localStorage.token=response.data.token;
+                        $window.localStorage.userId=response.data.id;
+
 
                         $state.go("lobby");
                         console.log(response);
