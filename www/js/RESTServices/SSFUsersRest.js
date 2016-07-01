@@ -8,6 +8,15 @@ angular.module("RESTServices", [])
                 method: 'POST',
                 data: newUserData
             });
+            
         };
+        SSFUsersRest.display=function(data){
+            return $http({
+                url:apiUrl+"/login",
+                method: 'POST',
+                data:data
+            });
+        };
+        
 
     }]);

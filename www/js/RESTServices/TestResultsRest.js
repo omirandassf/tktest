@@ -8,11 +8,14 @@ angular.module("RESTServices")
             method:'POST',
             data:test
             
-        })}
-    TestResultsRest.display=function(){
+        })};
+    TestResultsRest.display=function(token,userId){
         return $http({
-            url:apiUrl,
-            method:'GET'
+            url:apiUrl+"?filter[where][userID]="+userId,
+            method:'GET',
+             headers: {
+            'Authorization': token
+        }
         });
     };
 }]);

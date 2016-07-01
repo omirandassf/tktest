@@ -9,17 +9,12 @@ angular.module('TKTestAnswers', [])
             "accommodating": 0
         };
         var categoriesStack = [];
-
-        service.getTests = function() {
+        // var userID=$window.localStorage.userID;
+        
+        service.getTests = function(token,userId) {
             // return JSON.parse($window.localStorage.tests)||[];
-            return TestResultsRest.display().
-            then(function(res) {
-                console.log(res);
-                return res.data;
-            }, function(err) {
-                console.log(err);
-                return err;
-            });
+            return TestResultsRest.display(token,userId);
+            
         };
 
         service.setAnswers = function(answers) {
