@@ -13,11 +13,9 @@ angular.module('starter.controllers')
                     if (response.status == 200) {
                         $window.localStorage.token=response.data.token;
                         $window.localStorage.userId=response.data.id;
-
-
+                        $scope.user = {};
                         $state.go("lobby");
-                        console.log(response);
-                    
+
                 }}, function(err) {
                     if (err.status == 422) {
                         alert("Email already registered!");

@@ -9,6 +9,8 @@ angular.module('starter.controllers')
                     if (response.status == 200) {
                         $window.localStorage.token=response.data.id;
                         $window.localStorage.userId=response.data.userId;
+                        $scope.user = {};
+
                         $state.go("lobby");
 
 

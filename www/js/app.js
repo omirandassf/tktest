@@ -54,14 +54,12 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
       templateUrl: 'templates/history.html',
       controller: 'HistoryCtrl',
       resolve: {
-        tests: ['TKAnswersService','$window', 
-        function(TKAnswersService, $window) {
+        tests: ['TKAnswersService','$window','$state', 
+        function(TKAnswersService, $window,$state) {
           return TKAnswersService.getTests($window.localStorage.token,$window.localStorage.userId)
           .then(function(res) {
           return res.data;
-          
-            
-            
+     
           }, function(err) {
           
             if (err.status == 404) {
@@ -71,8 +69,7 @@ angular.module('starter', ['ionic', 'TKTestQuestions', 'starter.controllers', 'T
               alert("The world has ended, or the server just isn’t online");
             }
             alert("You have some problem with the Internet");
-            return err;
-
+            $state.go('landing');
 
           });
         }]

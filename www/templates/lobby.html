@@ -1,13 +1,17 @@
-<ion-view view-title="Menu" class="energized">
-  <ion-nav-buttons></ion-nav-buttons>
-  <ion-content class="padding">
-    <button class="button button-block button-light" ng-click=goToTest()>
+<ion-view view-title="Menu" hide-back-button="true">
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click=logOut()>
+        Log Out
+</button>
+  </ion-nav-buttons>
+  <ion-content class="padding" class="button-calm">
+    <button class="button button-block button-calm" ng-click=goToTest()>
           Take test
         </button>
-    <button class="button button-block button-stable" ui-sref="history">
+    <button class="button button-block button-energized" ui-sref="history">
           My Results
 </button>
-    
-    
+
+
   </ion-content>
 </ion-view>
